@@ -7,13 +7,13 @@
 
 /* BODY */
 body {
-    background: #F5E6D3;
     font-family: Arial, sans-serif;
+    background: #F5E6D3; /* Cream */
 }
 
 /* TOP BAR */
 .top-bar {
-    background: #6B3518;
+    background: #6B3518; /* Dark Brown */
     color: white;
     text-align: center;
     padding: 8px;
@@ -22,11 +22,11 @@ body {
 
 /* HEADER */
 .header {
-    background: #FFFFFF;
-    padding: 15px 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 15px 30px;
+    background: #FFFFFF;
     border-bottom: 1px solid #D8C3AF;
 }
 
@@ -51,43 +51,53 @@ body {
     text-decoration: none;
 }
 
-/* ABOUT SECTION */
+/* SECTION */
 .section {
-    padding: 40px;
-    max-width: 900px;
-    margin: auto;
-    background: #FFFFFF;
-    border-radius: 10px;
-    margin-top: 30px;
-    border: 1px solid #D8C3AF;
+    padding: 30px;
 }
 
-/* HEADINGS */
+/* TITLE */
 .section h2 {
     color: #6B3518;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
-.section h3 {
+/* CARDS CONTAINER */
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* CARD */
+.card {
+    width: 200px;
+    background: #FFFFFF;
+    border: 1px solid #D8C3AF;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
     color: #6B3518;
-    margin-top: 20px;
+    transition: 0.3s;
+}
+
+/* ICON */
+.card i {
+    font-size: 30px;
+    margin-bottom: 10px;
+    color: #E86A17; /* Orange */
 }
 
 /* TEXT */
-.section p {
-    color: #8A4B2A;
-    line-height: 1.6;
+.card h3 {
+    font-size: 16px;
 }
 
-/* LIST */
-.section ul {
-    margin-top: 10px;
-    padding-left: 20px;
-}
-
-.section ul li {
-    color: #8A4B2A;
-    margin-bottom: 8px;
+/* HOVER EFFECT */
+.card:hover {
+    transform: translateY(-5px);
+    background: #EEDDC8; /* Light Beige */
 }
 
 /* FOOTER */
@@ -108,7 +118,7 @@ body {
     border-top: 1px solid #D8C3AF;
     display: flex;
     justify-content: space-around;
-    padding: 10px;
+    padding: 10px 0;
 }
 
 .bottom-nav a {
@@ -118,6 +128,12 @@ body {
     font-size: 14px;
 }
 
+/* ACTIVE TAB */
+.bottom-nav a.active {
+    color: #E86A17;
+}
+
+/* HOVER */
 .bottom-nav a:hover {
     color: #E86A17;
 }
