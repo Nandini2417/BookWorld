@@ -1,60 +1,63 @@
-// ==========================
-// SEARCH FUNCTION
-// ==========================
-const searchInput = document.querySelector(".search input");
-const cards = document.querySelectorAll(".card");
+// ===== Banner Data (Fixed + Improved) =====
+const banners = [
+  {
+    img: "./assets/banner1.jpg",
+    title: "📚 Welcome to BookWorld",
+    text: "Explore thousands of books & start your reading journey today!"
+  },
+  {
+    img: "./assets/banner2.jpg",
+    title: "🚀 TRENDING BESTSELLERS",
+    text: "Discover what everyone is reading right now across all genres"
+  },
+  {
+    img: "./assets/banner3.jpg",
+    title: "📖 NEW ARRIVALS",
+    text: "Fresh collection of trending books added every week!"
+  },
+  {
+    img: "./assets/banner4.jpg",
+    title: "🔥 MEGA OFFER IS LIVE",
+    text: "Flat 40% OFF on all books + Extra discount on your first order 🎉"
+  }
+];
 
-searchInput.addEventListener("keyup", function () {
-    let value = searchInput.value.toLowerCase();
+let index = 0;
 
-    cards.forEach(card => {
-        let title = card.querySelector("h3").innerText.toLowerCase();
+// ===== Show Banner =====
+function showBanner() {
+  document.getElementById("bannerImage").src = banners[index].img;
+  document.getElementById("bannerTitle").innerText = banners[index].title;
+  document.getElementById("bannerText").innerText = banners[index].text;
+}
 
-        if (title.includes(value)) {
-            card.style.display = "block";
-        } else {
-            card.style.display = "none";
-        }
-    });
-});
+// ===== Next =====
+function nextImage() {
+  index = (index + 1) % banners.length;
+  showBanner();
+}
 
+// ===== Prev =====
+function prevImage() {
+  index = (index - 1 + banners.length) % banners.length;
+  showBanner();
+}
 
-// ==========================
-// ADD TO CART FUNCTION
-// ==========================
-let cartCount = 0;
+// ===== Auto Slide =====
+let autoSlide = setInterval(nextImage, 3000);
 
-const buttons = document.querySelectorAll(".card button");
+// ===== Pause on Hover (Optional Good UX) =====
+const bannerSection = document.querySelector("section");
 
-buttons.forEach(btn => {
-    btn.addEventListener("click", function () {
-        cartCount++;
+if (bannerSection) {
+  bannerSection.addEventListener("mouseenter", () => {
+    clearInterval(autoSlide);
+  });
 
-        let bookName = this.parentElement.querySelector("h3").innerText;
+  bannerSection.addEventListener("mouseleave", () => {
+    autoSlide = setInterval(nextImage, 3000);
+  });
+}
 
-        alert(bookName + " added to cart 🛒");
-
-        console.log("Cart Items:", cartCount);
-    });
-});
-
-
-// ==========================
-// SIMPLE WELCOME MESSAGE
-// ==========================
-window.onload = function () {
-    console.log("Welcome to BookWorld 📚");
-};
-
-
-// ==========================
-// MENU ACTIVE LINK
-// ==========================
-const menuLinks = document.querySelectorAll(".menu a");
-
-menuLinks.forEach(link => {
-    link.addEventListener("click", function () {
-        menuLinks.forEach(l => l.classList.remove("active"));
-        this.classList.add("active");
-    });
-});
+// ===== First Load =====
+window.onload = showBanner;

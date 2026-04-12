@@ -1,130 +1,222 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BookWorld</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BookWorld</title>
+<link rel="stylesheet" href="./css/style.css">
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
-    <link rel="stylesheet" href="./css/style.css">
-
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
-<body>
+<body class="bg-[#F5E6D3]">
 
-    <!-- TOP BAR -->
-    <div class="top-bar">
-        <p>100% Original Books | Direct From Publishers</p>
+  <!-- TOP BAR -->
+  <div class="bg-[#6B3518] text-white text-center py-2 text-sm">
+    100% Original Books | Direct From Publishers
+  </div>
+
+  <!-- HEADER -->
+  <header class="bg-[#EEDDC8] border-b border-[#D8C3AF] shadow flex flex-col md:flex-row items-center justify-between px-6 py-4 gap-4">
+
+    <h2 class="text-[#6B3518] text-2xl font-bold">
+      <i class="fa-solid fa-book-open"></i> BookWorld
+    </h2>
+
+    <div class="w-full md:w-1/2">
+      <input type="text" placeholder="🔍Search books..."
+        class="w-full px-4 py-2 border border-[#D8C3AF] rounded-lg bg-white text-[#8A4B2A] focus:outline-none focus:ring-2 focus:ring-[#F39C4A]">
     </div>
 
-    <!-- HEADER -->
-    <header class="header">
+    <div class="flex gap-6 text-xl text-[#6B3518]">
+  <a href="./pages/wishlist.html">
+    <i class="fa-solid fa-heart hover:text-[#E86A17]"></i>
+    <p class="text-xs">wishlist</p>
+  </a>
 
-        <div class="logo">
-            <h2><i class="fa-solid fa-book-open"></i> BookWorld</h2>
+  <a href="./pages/login.html">
+    <i class="fa-solid fa-user hover:text-[#E86A17]"></i>
+    <p class="text-xs">login</p>
+
+  </a>
+
+  <a href="./pages/cart.html">
+    <i class="fa-solid fa-cart-shopping hover:text-[#E86A17]"></i>
+    <p class="text-xs">cart</p>
+  </a>
+</div>
+  </header>
+
+  <!-- MENU -->
+  <nav class="bg-[#EEDDC8] border-b border-[#D8C3AF] flex justify-center gap-6 py-3 text-[#8A4B2A]">
+    <a href="index.html" class="text-[#6B3518] font-semibold">All</a>
+    <a href="#" class="hover:text-[#E86A17]">Bestsellers</a>
+    <a href="#" class="hover:text-[#E86A17]">New</a>
+    <a href="#" class="hover:text-[#E86A17]">Fiction</a>
+    <a href="#" class="hover:text-[#E86A17]">Non-Fiction</a>
+    <a href="#" class="hover:text-[#E86A17]">Children</a>
+    <a href="#" class="hover:text-[#E86A17]">Comics</a>
+    <a href="#" class="hover:text-[#E86A17]">Education</a>
+  </nav>
+
+  <!-- BANNER (SLIDER) -->
+<section class="relative w-full h-[300px] md:h-[450px] overflow-hidden">
+
+  <!-- Image -->
+  <img 
+    id="bannerImage"
+    src="./assets/banner1.jpg"
+    class="w-full h-full object-cover"
+  >
+
+  <!-- Overlay -->
+  <div class="absolute inset-0 bg-black/40 pointer-events-none"></div>
+
+  <!-- Text (FIXED IDS) -->
+  <div class="absolute inset-0 flex flex-col justify-center items-center text-center px-4 z-10">
+    <h1 id="bannerTitle" class="text-3xl md:text-5xl font-bold text-white mb-4 select-none"></h1>
+    <p id="bannerText" class="text-white text-lg md:text-xl select-none"></p>
+  </div>
+
+  <!-- Prev Button -->
+  <button onclick="prevImage()" 
+    class="absolute left-4 top-1/2 -translate-y-1/2 text-white text-3xl z-10">
+    ❮
+  </button>
+
+  <!-- Next Button -->
+  <button onclick="nextImage()" 
+    class="absolute right-4 top-1/2 -translate-y-1/2 text-white text-3xl z-10">
+    ❯
+  </button>
+
+</section>
+
+  <!-- BOOK SECTION -->
+  <section class="p-6">
+    <h2 class="text-2xl font-bold text-[#6B3518] mb-6">New Arrivals</h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+
+      <div class="bg-white border border-[#D8C3AF] rounded-xl shadow p-4">
+        <h3 class="text-[#6B3518] font-semibold">Book 1</h3>
+        <p class="text-[#8A4B2A]">Author Name</p>
+        <p class="text-[#6B3518] font-bold">₹299</p>
+        <button class="mt-3 w-full bg-[#E86A17] text-white py-2 rounded-lg hover:bg-[#F39C4A]">
+          Add to Cart
+        </button>
+      </div>
+
+      <div class="bg-white border border-[#D8C3AF] rounded-xl shadow p-4">
+        <h3 class="text-[#6B3518] font-semibold">Book 2</h3>
+        <p class="text-[#8A4B2A]">Author Name</p>
+        <p class="text-[#6B3518] font-bold">₹399</p>
+        <button class="mt-3 w-full bg-[#E86A17] text-white py-2 rounded-lg hover:bg-[#F39C4A]">
+          Add to Cart
+        </button>
+      </div>
+
+    </div>
+  </section>
+<!-- FOOTER -->
+<footer class="bg-[#6B3518] text-white pt-10 pb-6">
+
+  <div class="max-w-6xl mx-auto px-6">
+
+    <!-- TOP GRID -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+
+      <!-- ABOUT -->
+      <div>
+        <h2 class="text-2xl font-bold mb-3">📚 BookWorld</h2>
+
+        <p class="text-sm text-gray-200 leading-6">
+          BookWorld is your online bookstore to explore thousands of books
+          including fiction, comics, education and more.
+        </p>
+
+        <div class="mt-4 text-sm text-gray-300 space-y-1">
+          <p>📧 support@bookworld.com</p>
+          <p>📞 +91 85302 06759</p>
         </div>
 
-        <div class="search">
-            <input type="text" placeholder="Search books...">
+        <div class="mt-4 text-sm">
+          <p class="font-semibold">💳 Payment Options</p>
+          <p class="text-gray-300">UPI • Card • NetBanking • COD</p>
         </div>
+      </div>
 
-        <div class="icons">
-            <a href="./pages/wishlist.html"><i class="fa-solid fa-heart"></i></a>
-            <a href="./pages/login.html"><i class="fa-solid fa-user"></i></a>
-            <a href="./pages/cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
-        </div>
+      <!-- CATEGORY -->
+      <div>
+        <h3 class="text-xl font-semibold mb-3">Category</h3>
 
-    </header>
+        <ul class="space-y-2 text-sm text-gray-200">
+          <li class="hover:text-[#F39C4A] cursor-pointer"> Books</li>
+          <li class="hover:text-[#F39C4A] cursor-pointer"> Bestsellers</li>
+          <li class="hover:text-[#F39C4A] cursor-pointer">Action Comics</li>
+          <li class="hover:text-[#F39C4A] cursor-pointer">Magazine</li>
+          <li class="hover:text-[#F39C4A] cursor-pointer"> Education</li>
+        </ul>
+      </div>
 
-    <!-- MENU -->
-    <nav class="menu">
-        <a href="index.html" class="active">All</a>
-        <a href="#">Bestsellers</a>
-        <a href="#">New</a>
-        <a href="#">Fiction</a>
-        <a href="#">Non-Fiction</a>
-        <a href="#">Children</a>
-        <a href="#">Comics</a>
-        <a href="#">Education</a>
-    </nav>
+      <!-- QUICK LINKS -->
+      <div>
+        <h3 class="text-xl font-semibold mb-3">Quick Links</h3>
 
-    <!-- BANNER -->
-    <section class="banner">
-        <div class="banner-content">
-          
-        </div>
-    </section>
+        <ul class="space-y-2 text-sm text-gray-200">
+          <li class="hover:text-[#F39C4A] cursor-pointer">Secure Shopping</li>
+          <li class="hover:text-[#F39C4A] cursor-pointer">Privacy Policy</li>
+          <li class="hover:text-[#F39C4A] cursor-pointer">Shipping Policy</li>
 
-    <!-- BOOK SECTION -->
-    <section class="section">
-
-        <h2>New Arrivals</h2>
-
-        <div class="cards">
-
-            <div class="card">
-                <h3>Book 1</h3>
-                <p>Author Name</p>
-                <p class="price">₹299</p>
-                <button>Add to Cart</button>
-            </div>
-
-            <div class="card">
-                <h3>Book 2</h3>
-                <p>Author Name</p>
-                <p class="price">₹399</p>
-                <button>Add to Cart</button>
-            </div>
-
-            <div class="card">
-                <h3>Book 3</h3>
-                <p>Author Name</p>
-                <p class="price">₹499</p>
-                <button>Add to Cart</button>
-            </div>
-
-            <div class="card">
-                <h3>Book 4</h3>
-                <p>Author Name</p>
-                <p class="price">₹199</p>
-                <button>Add to Cart</button>
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="footer">
-        <p>© 2026 BOOKWORLD | All Rights Reserved</p>
-    </footer>
-
-    <!-- BOTTOM NAV -->
-    <div class="bottom-nav">
-
-        <a href="./index.html" class="active">
-            <i class="fa-solid fa-house"></i>
-            <span>Home</span>
-        </a>
-
-        <a href="./pages/categories.html">
-            <i class="fa-solid fa-layer-group"></i>
-            <span>Categories</span>
-        </a>
-
-        <a href="./pages/store.html">
-            <i class="fa-solid fa-store"></i>
-            <span>Store</span>
-        </a>
-
-        <a href="./pages/more.html">
-            <i class="fa-solid fa-bars"></i>
-            <span>More</span>
-        </a>
+        </ul>
+      </div>
 
     </div>
 
+    <!-- SOCIAL -->
+    <div class="flex justify-center gap-6 mt-8 text-xl">
+      <i class="fa-brands fa-instagram hover:text-[#F39C4A] cursor-pointer"></i>
+      <i class="fa-brands fa-facebook hover:text-[#F39C4A] cursor-pointer"></i>
+      <i class="fa-brands fa-twitter hover:text-[#F39C4A] cursor-pointer"></i>
+      <i class="fa-brands fa-whatsapp hover:text-[#F39C4A] cursor-pointer"></i>
+    </div>
+
+    <!-- COPYRIGHT -->
+    <div class="text-center text-xs text-gray-300 mt-6 border-t border-gray-500 pt-4">
+      © 2026 BookWorld | All Rights Reserved
+    </div>
+
+  </div>
+
+</footer>
+
+<!-- BOTTOM NAV -->
+<div class="fixed bottom-0 w-full bg-white border-t border-[#D8C3AF] flex justify-around py-3 shadow-lg">
+
+  <a href="./index.html" class="text-[#6B3518] text-center">
+    <i class="fa-solid fa-house"></i>
+    <p class="text-xs">Home</p>
+  </a>
+
+  <a href="./pages/categories.html" class="text-[#8A4B2A] text-center">
+    <i class="fa-solid fa-layer-group"></i>
+    <p class="text-xs">Categories</p>
+  </a>
+
+  <a href="./pages/store.html" class="text-[#8A4B2A] text-center">
+    <i class="fa-solid fa-store"></i>
+    <p class="text-xs">Store</p>
+  </a>
+
+  <a href="./pages/more.html" class="text-[#8A4B2A] text-center">
+    <i class="fa-solid fa-bars"></i>
+    <p class="text-xs">More</p>
+  </a>
+
+</div>
 <script src="./js/home.js"></script>
 </body>
 </html>
