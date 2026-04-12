@@ -3,47 +3,128 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BookWord - Home</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>BookWorld</title>
+
+    <link rel="stylesheet" href="./css/style.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
 
-    <!-- Navbar -->
-    <header>
-        <nav class="navbar">
-            <h2 class="logo">📚 BOOKWORLD</h2>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="./pages/category-books.html">Category-book</a></li>
-                <li><a href="./pages/categories.html">Categories</a></li>
-                <li><a href="./pages/cart.html">Cart</a></li>
-                <li><a href="./pages/login.html">Login</a></li>
-                <li><a href="./pages/register.html">Register</a></li>
-                <li><a href="./pages/contact.html">Contact</a></li>
-            </ul>
-        </nav>
+    <!-- TOP BAR -->
+    <div class="top-bar">
+        <p>100% Original Books | Direct From Publishers</p>
+    </div>
+
+    <!-- HEADER -->
+    <header class="header">
+
+        <div class="logo">
+            <h2><i class="fa-solid fa-book-open"></i> BookWorld</h2>
+        </div>
+
+        <div class="search">
+            <input type="text" placeholder="Search books...">
+        </div>
+
+        <div class="icons">
+            <a href="./pages/wishlist.html"><i class="fa-solid fa-heart"></i></a>
+            <a href="./pages/login.html"><i class="fa-solid fa-user"></i></a>
+            <a href="./pages/cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
+        </div>
+
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <h1>Welcome to BOOKWORLD 📚</h1>
-        <p>Your favorite place to buy books online</p>
-        <button onclick="shopNow()">Shop Now</button>
+    <!-- MENU -->
+    <nav class="menu">
+        <a href="index.html" class="active">All</a>
+        <a href="#">Bestsellers</a>
+        <a href="#">New</a>
+        <a href="#">Fiction</a>
+        <a href="#">Non-Fiction</a>
+        <a href="#">Children</a>
+        <a href="#">Comics</a>
+        <a href="#">Education</a>
+    </nav>
+
+    <!-- BANNER -->
+    <section class="banner">
+        <div class="banner-content">
+          
+        </div>
     </section>
 
-    <!-- Featured Books -->
-    <section class="featured">
-        <h2>Featured Books</h2>
+    <!-- BOOK SECTION -->
+    <section class="section">
+
+        <h2>New Arrivals</h2>
+
+        <div class="cards">
+
+            <div class="card">
+                <h3>Book 1</h3>
+                <p>Author Name</p>
+                <p class="price">₹299</p>
+                <button>Add to Cart</button>
+            </div>
+
+            <div class="card">
+                <h3>Book 2</h3>
+                <p>Author Name</p>
+                <p class="price">₹399</p>
+                <button>Add to Cart</button>
+            </div>
+
+            <div class="card">
+                <h3>Book 3</h3>
+                <p>Author Name</p>
+                <p class="price">₹499</p>
+                <button>Add to Cart</button>
+            </div>
+
+            <div class="card">
+                <h3>Book 4</h3>
+                <p>Author Name</p>
+                <p class="price">₹199</p>
+                <button>Add to Cart</button>
+            </div>
+
+        </div>
 
     </section>
 
-    <!-- Footer -->
-    <footer>
+    <!-- FOOTER -->
+    <footer class="footer">
         <p>© 2026 BOOKWORLD | All Rights Reserved</p>
     </footer>
 
-    <script src="js/home.js"></script>
+    <!-- BOTTOM NAV -->
+    <div class="bottom-nav">
 
+        <a href="./index.html" class="active">
+            <i class="fa-solid fa-house"></i>
+            <span>Home</span>
+        </a>
+
+        <a href="./pages/categories.html">
+            <i class="fa-solid fa-layer-group"></i>
+            <span>Categories</span>
+        </a>
+
+        <a href="./pages/store.html">
+            <i class="fa-solid fa-store"></i>
+            <span>Store</span>
+        </a>
+
+        <a href="./pages/more.html">
+            <i class="fa-solid fa-bars"></i>
+            <span>More</span>
+        </a>
+
+    </div>
+
+<script src="./js/home.js"></script>
 </body>
 </html>
