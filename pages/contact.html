@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< Updated upstream
     <title>Cart - BookWorld</title>
 
     <link rel="stylesheet" href="../css/contact.css">
@@ -148,5 +149,102 @@
 
 </div>
 <script src="./../js/contact.js"></script>
+=======
+    <title>BookWorld - Contact</title>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/contact.css">
+</head>
+
+<body class="bg-[#F5E6D3] min-h-screen flex flex-col text-[#8A4B2A]">
+
+<!-- 🌟 NAVBAR -->
+<header class="bg-[#6B3518] text-white shadow-md sticky top-0 z-50">
+    <nav class="max-w-6xl mx-auto flex justify-between items-center p-4">
+
+        <h2 class="text-xl font-bold">📚 BookWorld</h2>
+
+        <ul class="hidden md:flex gap-6 text-sm">
+            <li><a class="hover:text-[#F39C4A]" href="./../index.html">Home</a></li>
+            <li><a class="hover:text-[#F39C4A]" href="./category-books.html">Books</a></li>
+            <li><a class="hover:text-[#F39C4A]" href="./categories.html">Categories</a></li>
+            <li><a class="hover:text-[#F39C4A]" href="./cart.html">Cart</a></li>
+            <li><a class="text-[#F39C4A] font-bold" href="./contact.html">Contact</a></li>
+        </ul>
+
+    </nav>
+</header>
+
+<!-- 🌟 MAIN -->
+<main class="flex-1">
+
+<section class="max-w-6xl mx-auto p-4 md:p-10 grid grid-cols-1 md:grid-cols-2 gap-10">
+
+    <!-- INFO CARD -->
+    <div class="bg-[#EEDDC8] rounded-2xl shadow-lg border border-[#D8C3AF] p-6">
+
+        <h2 class="text-3xl font-bold text-[#6B3518] mb-3">
+            Get in Touch 📩
+        </h2>
+
+        <p class="text-[#8A4B2A] mb-6">
+            Have questions about books, orders or delivery? We’re here to help you anytime.
+        </p>
+
+        <div class="space-y-4 text-[#8A4B2A]">
+            <p><i class="fa-solid fa-envelope text-[#E86A17]"></i> support@bookworld.com</p>
+            <p><i class="fa-solid fa-phone text-[#E86A17]"></i> +91 9876543210</p>
+            <p><i class="fa-solid fa-location-dot text-[#E86A17]"></i> Pune, Maharashtra</p>
+        </div>
+
+        <img src="https://cdn-icons-png.flaticon.com/512/3145/3145765.png"
+     class="w-48 mx-auto mt-6">
+    </div>
+
+    <!-- FORM CARD -->
+    <div class="bg-white rounded-2xl shadow-lg border border-[#D8C3AF] p-6">
+
+        <h3 class="text-2xl font-bold text-[#6B3518] mb-4">
+            Send Message 💬
+        </h3>
+
+        <form id="contactForm" class="space-y-4">
+
+            <input type="email" id="email" placeholder="Your Email"
+                class="w-full p-3 rounded-lg border border-[#D8C3AF] focus:outline-none focus:ring-2 focus:ring-[#E86A17]">
+
+            <textarea id="message" rows="5" placeholder="Your Message"
+                class="w-full p-3 rounded-lg border border-[#D8C3AF] focus:outline-none focus:ring-2 focus:ring-[#E86A17]"></textarea>
+
+            <button type="submit"
+                class="w-full bg-[#E86A17] text-white py-3 rounded-lg hover:bg-[#F39C4A] transition font-semibold">
+                Send Message 🚀
+            </button>
+
+            <p id="successMsg" class="text-green-600 font-semibold hidden text-center">
+                ✔ Message sent successfully!
+            </p>
+
+        </form>
+    </div>
+
+</section>
+
+</main>
+
+<!-- 🌟 FOOTER -->
+<footer class="bg-[#6B3518] text-white text-center p-4 mt-10">
+    © 2026 BOOKWORLD | All Rights Reserved
+</footer>
+
+<script src="./js/contact.js"></script>
+
+>>>>>>> Stashed changes
 </body>
 </html>
