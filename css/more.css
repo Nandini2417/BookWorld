@@ -115,12 +115,67 @@ footer {
     font-size: 14px;
   }
 
-/* ACTIVE TAB */
-.bottom-nav a.active {
-    color: #E86A17;
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .flex.gap-6 {
+    justify-content: center;
+  }
 }
 
-/* HOVER */
-.bottom-nav a:hover {
-    color: #E86A17;
+/* ========================= */
+/* 📲 SMALL MOBILE */
+/* ========================= */
+
+@media (max-width: 480px) {
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .section {
+    padding: 30px 10px;
+  }
+
+  .section h2 {
+    font-size: 20px;
+  }
+}
+
+/* ========================= */
+/* 💻 TABLET */
+/* ========================= */
+
+@media (min-width: 769px) and (max-width: 1024px) {
+
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: 0.8s ease;
+}
+
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ========================= */
+/* 🔥 SCROLLBAR */
+/* ========================= */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #E86A17;
+  border-radius: 10px;
 }
