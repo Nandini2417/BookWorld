@@ -7,9 +7,67 @@
     <link rel="stylesheet" href="../css/login.css">
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <!-- Navbar -->
-   
+
+<body class="bg-[#F5E6D3] flex items-center justify-center min-h-screen">
+
+  <!-- LOGIN CARD -->
+  <div class="bg-[#FFFFFF] shadow-lg border border-[#D8C3AF] rounded-2xl w-[90%] max-w-md p-8">
+
+    <!-- LOGO / TITLE -->
+    <div class="text-center mb-6">
+      <h1 class="text-3xl font-bold text-[#6B3518]">📚 BookWorld</h1>
+      <p class="text-[#8A4B2A] text-sm mt-1">Login to your account</p>
+    </div>
+
+    <!-- FORM -->
+    <form id="loginForm">
+
+      <!-- EMAIL -->
+      <div class="mb-4">
+        <label class="block text-sm font-medium text-[#6B3518] mb-1">Email</label>
+        <div class="flex items-center bg-[#EEDDC8] border border-[#D8C3AF] rounded-lg px-3 py-2">
+          <i class="fa-solid fa-envelope text-[#8A4B2A] mr-2"></i>
+          <input type="email" id="email" placeholder="Enter your email"
+            class="w-full outline-none text-sm bg-transparent text-[#6B3518] placeholder-[#8A4B2A]">
+        </div>
+      </div>
+
+      <!-- PASSWORD -->
+      <div class="mb-4">
+        <label class="block text-sm font-medium text-[#6B3518] mb-1">Password</label>
+        <div class="flex items-center bg-[#EEDDC8] border border-[#D8C3AF] rounded-lg px-3 py-2">
+          <i class="fa-solid fa-lock text-[#8A4B2A] mr-2"></i>
+          <input type="password" id="password" placeholder="Enter your password"
+            class="w-full outline-none text-sm bg-transparent text-[#6B3518] placeholder-[#8A4B2A]">
+        </div>
+      </div>
+
+      <!-- REMEMBER + FORGOT -->
+      <div class="flex justify-between items-center text-sm mb-6">
+        <label class="flex items-center gap-2 text-[#8A4B2A]">
+          <input type="checkbox" class="accent-[#E86A17]">
+          Remember me
+        </label>
+        <a href="#" class="text-[#E86A17] hover:text-[#F39C4A]">Forgot Password?</a>
+      </div>
+
+      <!-- LOGIN BUTTON -->
+      <button type="submit"
+        class="w-full bg-[#E86A17] text-white py-2 rounded-lg font-semibold hover:bg-[#F39C4A] transition">
+        Login
+      </button>
+
+    </form>
+
+    <!-- REGISTER LINK -->
+    <p class="text-center text-sm text-[#8A4B2A] mt-6">
+      Don’t have an account?
+      <a href="./register.html" class="text-[#E86A17] font-medium hover:text-[#F39C4A]">
+        Register
+      </a>
+    </p>
+
+  </div>
 
     <script src="./../js/login.js"></script>
 </html>
