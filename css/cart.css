@@ -1,0 +1,216 @@
+/* RESET + SMOOTH UI */
+
+* {
+
+  margin: 0;
+
+  padding: 0;
+
+  box-sizing: border-box;
+
+  transition: all 0.2s ease-in-out;
+
+}
+ 
+/* Prevent bottom nav overlap */
+
+body {
+
+  padding-bottom: 70px;
+
+}
+ 
+/* Cart container improvements */
+
+#cartContainer {
+
+  width: 100%;
+
+}
+ 
+/* Scrollable cart items */
+
+#itemsList {
+
+  max-height: 300px;
+
+  overflow-y: auto;
+
+  padding-right: 5px;
+
+}
+ 
+/* Custom scrollbar */
+
+#itemsList::-webkit-scrollbar {
+
+  width: 6px;
+
+}
+ 
+#itemsList::-webkit-scrollbar-thumb {
+
+  background: #E86A17;
+
+  border-radius: 10px;
+
+}
+ 
+/* Item card hover */
+
+#itemsList > div:hover {
+
+  transform: scale(1.02);
+
+}
+ 
+/* Button hover feel */
+
+button:hover {
+
+  transform: translateY(-1px);
+
+}
+ 
+/* ===== MOBILE (Small Screens) ===== */
+
+@media (max-width: 640px) {
+ 
+  header {
+
+    text-align: center;
+
+  }
+ 
+  header h2 {
+
+    font-size: 20px;
+
+  }
+ 
+  header input {
+
+    font-size: 14px;
+
+  }
+ 
+  /* Cart box */
+
+  #cartContainer {
+
+    padding: 16px;
+
+    border-radius: 12px;
+
+  }
+ 
+  /* Cart items layout */
+
+  #itemsList > div {
+
+    flex-direction: column;
+
+    align-items: flex-start !important;
+
+    gap: 10px;
+
+  }
+ 
+  #itemsList img {
+
+    width: 50px;
+
+    height: 70px;
+
+  }
+ 
+  #itemsList button {
+
+    align-self: flex-end;
+
+    font-size: 12px;
+
+  }
+ 
+  /* Footer */
+
+  footer {
+
+    text-align: center;
+
+  }
+ 
+  footer .grid {
+
+    grid-template-columns: 1fr;
+
+  }
+
+}
+ 
+/* ===== TABLET ===== */
+
+@media (min-width: 641px) and (max-width: 1024px) {
+ 
+  #cartContainer {
+
+    max-width: 90%;
+
+  }
+ 
+  #itemsList {
+
+    max-height: 350px;
+
+  }
+
+}
+ 
+/* ===== DESKTOP ===== */
+
+@media (min-width: 1025px) {
+ 
+  #cartContainer {
+
+    max-width: 500px;
+
+  }
+ 
+  #itemsList {
+
+    max-height: 400px;
+
+  }
+
+}
+ 
+/* Bottom nav active feel */
+
+.fixed a:hover {
+
+  color: #E86A17;
+
+}
+ 
+/* Icon + text alignment fix */
+
+.fixed a {
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 2px;
+
+}
+ 
+/* Footer spacing fix */
+
+footer ul li {
+
+  transition: color 0.2s;
+
+}
+ 
