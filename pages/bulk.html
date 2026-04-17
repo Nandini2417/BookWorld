@@ -5,13 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bulk Purchase - BookWorld</title>
 
-  <link rel="stylesheet" href="../css/bulk.css">
- <!-- Tailwind CSS -->
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
+
   <!-- Font Awesome -->
   <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
+
 <body class="bg-[#F5E6D3]">
 
   <!-- TOP BAR -->
@@ -27,119 +28,158 @@
     </h2>
 
     <div class="w-full md:w-1/2">
-      <input type="text" placeholder="🔍Search books..."
+      <input type="text" placeholder="🔍 Search books..."
         class="w-full px-4 py-2 border border-[#D8C3AF] rounded-lg bg-white text-[#8A4B2A] focus:outline-none focus:ring-2 focus:ring-[#F39C4A]">
     </div>
-  <a href="./login.html">
-    <i class="fa-solid fa-user hover:text-[#E86A17]"></i>
-    <p class="text-xs">login</p>
 
-  </a>
+    <div class="flex gap-6 text-[#6B3518]">
+      <a href="./login.html" class="text-center hover:text-[#E86A17]">
+        <i class="fa-solid fa-user text-lg"></i>
+        <p class="text-xs">Login</p>
+      </a>
 
-  <a href="./cart.html">
-    <i class="fa-solid fa-cart-shopping hover:text-[#E86A17]"></i>
-    <p class="text-xs">cart</p>
-  </a>
-</div>
+      <a href="./cart.html" class="text-center hover:text-[#E86A17]">
+        <i class="fa-solid fa-cart-shopping text-lg"></i>
+        <p class="text-xs">Cart</p>
+      </a>
+    </div>
 
   </header>
 
+  <!-- BULK PURCHASE FORM -->
+  <div class="max-w-3xl mx-auto mt-10 mb-20 bg-[#EEDDC8] p-8 rounded-2xl shadow-lg border border-[#D8C3AF]">
 
-<!-- FOOTER -->
-<footer class="bg-[#6B3518] text-white pt-10 pb-6">
+    <h1 class="text-2xl font-bold mb-6 text-center text-[#6B3518]">
+      Bulk Purchase
+    </h1>
 
-  <div class="max-w-6xl mx-auto px-6">
+    <form id="bulkForm" class="space-y-4">
 
-    <!-- TOP GRID -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+      <!-- Row -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <input type="text" id="name" placeholder="Name" required
+          class="w-full p-3 border border-[#D8C3AF] rounded-lg bg-white text-[#8A4B2A]
+          focus:outline-none focus:ring-2 focus:ring-[#F39C4A]">
 
-      <!-- ABOUT -->
-      <div>
-        <h2 class="text-2xl font-bold mb-3">📚 BookWorld</h2>
+        <input type="email" id="email" placeholder="Email *" required
+          class="w-full p-3 border border-[#D8C3AF] rounded-lg bg-white text-[#8A4B2A]
+          focus:outline-none focus:ring-2 focus:ring-[#F39C4A]">
+      </div>
 
-        <p class="text-sm text-gray-200 leading-6">
-          BookWorld is your online bookstore to explore thousands of books
-          including fiction, comics, education and more.
-        </p>
+      <!-- Phone -->
+      <input type="text" id="phone" placeholder="Phone number"
+        class="w-full p-3 border border-[#D8C3AF] rounded-lg bg-white text-[#8A4B2A]
+        focus:outline-none focus:ring-2 focus:ring-[#F39C4A]">
 
-        <div class="mt-4 text-sm text-gray-300 space-y-1">
-          <p>📧 support@bookworld.com</p>
-          <p>📞 +91 85302 06759</p>
+      <!-- Comment -->
+      <textarea id="comment" placeholder="Comment"
+        class="w-full p-3 border border-[#D8C3AF] rounded-lg bg-white text-[#8A4B2A]
+        h-32 resize-none focus:outline-none focus:ring-2 focus:ring-[#F39C4A]"></textarea>
+
+      <!-- Button -->
+      <button type="submit"
+        class="w-full bg-[#E86A17] text-white py-3 rounded-lg 
+        hover:bg-[#F39C4A] transition duration-300 font-semibold">
+        Send Request
+      </button>
+
+    </form>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="bg-[#6B3518] text-white pt-10 pb-6">
+
+    <div class="max-w-6xl mx-auto px-6">
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+
+        <!-- ABOUT -->
+        <div>
+          <h2 class="text-2xl font-bold mb-3">📚 BookWorld</h2>
+          <p class="text-sm text-gray-200 leading-6">
+            BookWorld is your online bookstore to explore thousands of books
+            including fiction, comics, education and more.
+          </p>
+
+          <div class="mt-4 text-sm text-gray-300 space-y-1">
+            <p>📧 support@bookworld.com</p>
+            <p>📞 +91 85302 06759</p>
+          </div>
+
+          <div class="mt-4 text-sm">
+            <p class="font-semibold">💳 Payment Options</p>
+            <p class="text-gray-300">UPI • Card • NetBanking • COD</p>
+          </div>
         </div>
 
-        <div class="mt-4 text-sm">
-          <p class="font-semibold">💳 Payment Options</p>
-          <p class="text-gray-300">UPI • Card • NetBanking • COD</p>
+        <!-- CATEGORY -->
+        <div>
+          <h3 class="text-xl font-semibold mb-3">Category</h3>
+          <ul class="space-y-2 text-sm text-gray-200">
+            <li class="hover:text-[#F39C4A] cursor-pointer">Books</li>
+            <li class="hover:text-[#F39C4A] cursor-pointer">Bestsellers</li>
+            <li class="hover:text-[#F39C4A] cursor-pointer">Action Comics</li>
+            <li class="hover:text-[#F39C4A] cursor-pointer">Magazine</li>
+            <li class="hover:text-[#F39C4A] cursor-pointer">Education</li>
+          </ul>
         </div>
+
+        <!-- LINKS -->
+        <div>
+          <h3 class="text-xl font-semibold mb-3">Quick Links</h3>
+          <ul class="space-y-2 text-sm text-gray-200">
+            <li class="hover:text-[#F39C4A] cursor-pointer">Secure Shopping</li>
+            <li class="hover:text-[#F39C4A] cursor-pointer">Privacy Policy</li>
+            <li class="hover:text-[#F39C4A] cursor-pointer">Shipping Policy</li>
+          </ul>
+        </div>
+
       </div>
 
-      <!-- CATEGORY -->
-      <div>
-        <h3 class="text-xl font-semibold mb-3">Category</h3>
-
-        <ul class="space-y-2 text-sm text-gray-200">
-          <li class="hover:text-[#F39C4A] cursor-pointer"> Books</li>
-          <li class="hover:text-[#F39C4A] cursor-pointer"> Bestsellers</li>
-          <li class="hover:text-[#F39C4A] cursor-pointer">Action Comics</li>
-          <li class="hover:text-[#F39C4A] cursor-pointer">Magazine</li>
-          <li class="hover:text-[#F39C4A] cursor-pointer"> Education</li>
-        </ul>
+      <!-- SOCIAL -->
+      <div class="flex justify-center gap-6 mt-8 text-xl">
+        <i class="fa-brands fa-instagram hover:text-[#F39C4A] cursor-pointer"></i>
+        <i class="fa-brands fa-facebook hover:text-[#F39C4A] cursor-pointer"></i>
+        <i class="fa-brands fa-twitter hover:text-[#F39C4A] cursor-pointer"></i>
+        <i class="fa-brands fa-whatsapp hover:text-[#F39C4A] cursor-pointer"></i>
       </div>
 
-      <!-- QUICK LINKS -->
-      <div>
-        <h3 class="text-xl font-semibold mb-3">Quick Links</h3>
-
-        <ul class="space-y-2 text-sm text-gray-200">
-          <li class="hover:text-[#F39C4A] cursor-pointer">Secure Shopping</li>
-          <li class="hover:text-[#F39C4A] cursor-pointer">Privacy Policy</li>
-          <li class="hover:text-[#F39C4A] cursor-pointer">Shipping Policy</li>
-
-        </ul>
+      <!-- COPYRIGHT -->
+      <div class="text-center text-xs text-gray-300 mt-6 border-t border-gray-500 pt-4">
+        © 2026 BookWorld | All Rights Reserved
       </div>
 
     </div>
 
-    <!-- SOCIAL -->
-    <div class="flex justify-center gap-6 mt-8 text-xl">
-      <i class="fa-brands fa-instagram hover:text-[#F39C4A] cursor-pointer"></i>
-      <i class="fa-brands fa-facebook hover:text-[#F39C4A] cursor-pointer"></i>
-      <i class="fa-brands fa-twitter hover:text-[#F39C4A] cursor-pointer"></i>
-      <i class="fa-brands fa-whatsapp hover:text-[#F39C4A] cursor-pointer"></i>
-    </div>
+  </footer>
 
-    <!-- COPYRIGHT -->
-    <div class="text-center text-xs text-gray-300 mt-6 border-t border-gray-500 pt-4">
-      © 2026 BookWorld | All Rights Reserved
-    </div>
+  <!-- BOTTOM NAV -->
+  <div class="fixed bottom-0 w-full bg-white border-t border-[#D8C3AF] flex justify-around py-3 shadow-lg">
+
+    <a href="./../index.html" class="text-[#6B3518] text-center">
+      <i class="fa-solid fa-house"></i>
+      <p class="text-xs">Home</p>
+    </a>
+
+    <a href="./categories.html" class="text-[#8A4B2A] text-center">
+      <i class="fa-solid fa-layer-group"></i>
+      <p class="text-xs">Categories</p>
+    </a>
+
+    <a href="./store.html" class="text-[#8A4B2A] text-center">
+      <i class="fa-solid fa-store"></i>
+      <p class="text-xs">Store</p>
+    </a>
+
+    <a href="./more.html" class="text-[#8A4B2A] text-center">
+      <i class="fa-solid fa-bars"></i>
+      <p class="text-xs">More</p>
+    </a>
 
   </div>
 
-</footer>
-<!-- BOTTOM NAV -->
-<div class="fixed bottom-0 w-full bg-white border-t border-[#D8C3AF] flex justify-around py-3 shadow-lg">
+  <!-- JS -->
+  <script src="./../js/bulk.js"></script>
 
-  <a href="./../index.html" class="text-[#6B3518] text-center">
-    <i class="fa-solid fa-house"></i>
-    <p class="text-xs">Home</p>
-  </a>
-
-  <a href="./categories.html" class="text-[#8A4B2A] text-center">
-    <i class="fa-solid fa-layer-group"></i>
-    <p class="text-xs">Categories</p>
-  </a>
-
-  <a href="./store.html" class="text-[#8A4B2A] text-center">
-    <i class="fa-solid fa-store"></i>
-    <p class="text-xs">Store</p>
-  </a>
-
-  <a href="./more.html" class="text-[#8A4B2A] text-center">
-    <i class="fa-solid fa-bars"></i>
-    <p class="text-xs">More</p>
-  </a>
-
-</div>
-<script src="./../js/bulk.js"></script>
 </body>
 </html>
