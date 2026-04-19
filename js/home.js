@@ -46,7 +46,7 @@ function prevImage() {
 // ===== Auto Slide =====
 let autoSlide = setInterval(nextImage, 3000);
 
-// ===== Pause on Hover (Optional Good UX) =====
+// ===== Pause on Hover =====
 const bannerSection = document.querySelector("section");
 
 if (bannerSection) {
@@ -61,3 +61,33 @@ if (bannerSection) {
 
 // ===== First Load =====
 window.onload = showBanner;
+
+
+// ==============================
+// 🛒 ADD TO CART FUNCTION
+// ==============================
+
+function addItem(name, price) {
+
+  // get existing cart
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  // check if product already exists
+  let existingItem = cart.find(item => item.name === name);
+
+  if (existingItem) {
+    existingItem.qty += 1; // increase quantity
+  } else {
+    cart.push({
+      name: name,
+      price: price,
+      qty: 1
+    });
+  }
+
+  // save back to localStorage
+  localStorage.setItem("cart", JSON.stringify(cart));
+
+  // alert
+  alert(name + " added to cart 🛒");
+}
