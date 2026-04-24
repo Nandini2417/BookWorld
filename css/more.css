@@ -1,139 +1,181 @@
 /* RESET */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 /* BODY */
 body {
-    font-family: Arial, sans-serif;
-    background: #F5E6D3; /* Cream */
-}
-
-/* TOP BAR */
-.top-bar {
-    background: #6B3518; /* Dark Brown */
-    color: white;
-    text-align: center;
-    padding: 8px;
-    font-size: 14px;
-}
-
-/* HEADER */
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 30px;
-    background: #FFFFFF;
-    border-bottom: 1px solid #D8C3AF;
-}
-
-/* LOGO */
-.logo h2 {
-    color: #6B3518;
-}
-
-/* SEARCH */
-.search input {
-    padding: 8px 15px;
-    width: 250px;
-    border-radius: 20px;
-    border: 1px solid #D8C3AF;
-}
-
-/* ICONS */
-.icons a {
-    margin-left: 15px;
-    font-size: 18px;
-    color: #6B3518;
-    text-decoration: none;
+  font-family: 'Segoe UI', sans-serif;
+  background: #F5E6D3;
 }
 
 /* SECTION */
 .section {
-    padding: 30px;
+  max-width: 1200px;
+  margin: auto;
+  padding: 40px 20px;
+  text-align: center;
 }
 
 /* TITLE */
 .section h2 {
-    color: #6B3518;
-    margin-bottom: 20px;
+  font-size: 28px;
+  color: #6B3518;
+  margin-bottom: 30px;
+  transition: 0.3s;
 }
 
-/* CARDS CONTAINER */
+.section h2:hover {
+  letter-spacing: 1px;
+}
+
+/* CARDS GRID */
 .cards {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
 }
 
 /* CARD */
 .card {
-    width: 200px;
-    background: #FFFFFF;
-    border: 1px solid #D8C3AF;
-    border-radius: 12px;
-    padding: 20px;
-    text-align: center;
-    text-decoration: none;
-    color: #6B3518;
-    transition: 0.3s;
+  background: white;
+  padding: 30px 20px;
+  border-radius: 12px;
+  text-decoration: none;
+  color: #6B3518;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: 0.3s;
 }
 
-/* ICON */
 .card i {
-    font-size: 30px;
-    margin-bottom: 10px;
-    color: #E86A17; /* Orange */
+  font-size: 28px;
+  margin-bottom: 10px;
+  color: #E86A17;
 }
 
-/* TEXT */
 .card h3 {
-    font-size: 16px;
+  font-size: 16px;
 }
 
 /* HOVER EFFECT */
 .card:hover {
-    transform: translateY(-5px);
-    background: #EEDDC8; /* Light Beige */
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* HEADER FIX */
+header {
+  flex-wrap: wrap;
+}
+
+/* SEARCH */
+input {
+  transition: 0.3s;
+}
+
+input:focus {
+  transform: scale(1.02);
+}
+
+/* ICON HOVER */
+i {
+  transition: 0.3s;
+}
+
+i:hover {
+  transform: scale(1.2);
 }
 
 /* FOOTER */
-.footer {
-    background: #6B3518;
-    color: white;
-    text-align: center;
-    padding: 15px;
-    margin-top: 40px;
+footer {
+  margin-bottom: 60px;
 }
 
-/* BOTTOM NAV */
-.bottom-nav {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background: #FFFFFF;
-    border-top: 1px solid #D8C3AF;
-    display: flex;
-    justify-content: space-around;
-    padding: 10px 0;
-}
+/* ========================= */
+/* 📱 MOBILE RESPONSIVE */
+/* ========================= */
 
-.bottom-nav a {
-    text-decoration: none;
-    color: #6B3518;
-    text-align: center;
+@media (max-width: 768px) {
+
+  .cards {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .section h2 {
+    font-size: 22px;
+  }
+
+  .card {
+    padding: 20px;
+  }
+
+  .card h3 {
     font-size: 14px;
+  }
+
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .flex.gap-6 {
+    justify-content: center;
+  }
 }
 
-/* ACTIVE TAB */
-.bottom-nav a.active {
-    color: #E86A17;
+/* ========================= */
+/* 📲 SMALL MOBILE */
+/* ========================= */
+
+@media (max-width: 480px) {
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .section {
+    padding: 30px 10px;
+  }
+
+  .section h2 {
+    font-size: 20px;
+  }
 }
 
-/* HOVER */
-.bottom-nav a:hover {
-    color: #E86A17;
+/* ========================= */
+/* 💻 TABLET */
+/* ========================= */
+
+@media (min-width: 769px) and (max-width: 1024px) {
+
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: 0.8s ease;
+}
+
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ========================= */
+/* 🔥 SCROLLBAR */
+/* ========================= */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #E86A17;
+  border-radius: 10px;
 }

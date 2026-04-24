@@ -1,123 +1,175 @@
 /* RESET */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 /* BODY */
 body {
-    background: #F5E6D3;
-    font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #F5E6D3;
+  line-height: 1.6;
 }
 
-/* TOP BAR */
-.top-bar {
-    background: #6B3518;
-    color: white;
-    text-align: center;
-    padding: 8px;
-    font-size: 14px;
+/* SMOOTH SCROLL */
+html {
+  scroll-behavior: smooth;
 }
 
 /* HEADER */
-.header {
-    background: #FFFFFF;
-    padding: 15px 30px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid #D8C3AF;
+header {
+  flex-wrap: wrap;
 }
 
-/* LOGO */
-.logo h2 {
-    color: #6B3518;
+/* SEARCH BOX */
+input {
+  transition: 0.3s;
 }
 
-/* SEARCH */
-.search input {
-    padding: 8px 15px;
-    width: 250px;
-    border-radius: 20px;
-    border: 1px solid #D8C3AF;
+input:focus {
+  transform: scale(1.03);
 }
 
 /* ICONS */
-.icons a {
-    margin-left: 15px;
-    font-size: 18px;
-    color: #6B3518;
-    text-decoration: none;
+i {
+  transition: 0.3s;
 }
 
-/* ABOUT SECTION */
-.section {
-    padding: 40px;
-    max-width: 900px;
-    margin: auto;
-    background: #FFFFFF;
-    border-radius: 10px;
-    margin-top: 30px;
-    border: 1px solid #D8C3AF;
+i:hover {
+  transform: scale(1.2);
+}
+
+/* LINKS */
+a {
+  text-decoration: none;
+}
+
+/* CARDS */
+.shadow {
+  transition: 0.3s;
+  border-radius: 12px;
+}
+
+.shadow:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
 /* HEADINGS */
-.section h2 {
-    color: #6B3518;
-    margin-bottom: 15px;
+h1, h2 {
+  transition: 0.3s;
 }
 
-.section h3 {
-    color: #6B3518;
-    margin-top: 20px;
+h1:hover, h2:hover {
+  letter-spacing: 1px;
 }
 
-/* TEXT */
-.section p {
-    color: #8A4B2A;
-    line-height: 1.6;
+/* GRID SPACING FIX */
+.grid {
+  gap: 20px;
 }
 
-/* LIST */
-.section ul {
-    margin-top: 10px;
-    padding-left: 20px;
+/* STATS ANIMATION */
+section .grid div {
+  transition: 0.3s;
 }
 
-.section ul li {
-    color: #8A4B2A;
-    margin-bottom: 8px;
+section .grid div:hover {
+  transform: scale(1.05);
 }
 
 /* FOOTER */
-.footer {
-    background: #6B3518;
-    color: white;
-    text-align: center;
-    padding: 15px;
-    margin-top: 40px;
+footer {
+  margin-top: 40px;
 }
 
-/* BOTTOM NAV */
-.bottom-nav {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background: #FFFFFF;
-    border-top: 1px solid #D8C3AF;
-    display: flex;
-    justify-content: space-around;
-    padding: 10px;
+/* ========================= */
+/* 🔥 FADE ANIMATION */
+/* ========================= */
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
 }
 
-.bottom-nav a {
-    text-decoration: none;
-    color: #6B3518;
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ========================= */
+/* 📱 MOBILE */
+/* ========================= */
+
+@media (max-width: 768px) {
+
+  header {
+    flex-direction: column;
     text-align: center;
+  }
+
+  .flex.gap-6 {
+    justify-content: center;
+  }
+
+  .grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  p {
     font-size: 14px;
+  }
 }
 
-.bottom-nav a:hover {
-    color: #E86A17;
+/* ========================= */
+/* 📲 TABLET */
+/* ========================= */
+
+@media (min-width: 769px) and (max-width: 1024px) {
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+}
+
+/* ========================= */
+/* 💻 DESKTOP */
+/* ========================= */
+
+@media (min-width: 1025px) {
+
+  h1 {
+    font-size: 32px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+}
+
+/* ========================= */
+/* 🔥 SCROLLBAR */
+/* ========================= */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #E86A17;
+  border-radius: 10px;
 }
