@@ -55,7 +55,6 @@ body {
   border-bottom: 1px solid #D8C3AF;
   display: flex;
   justify-content: center;
-  align-items: center;
   flex-wrap: wrap;
   gap: 25px;
   padding: 12px;
@@ -96,7 +95,6 @@ body {
   position: absolute;
   inset: 0;
   background: rgba(0, 0, 0, 0.4);
-  pointer-events: none;
 }
 
 .banner-content {
@@ -115,7 +113,6 @@ body {
   margin-top: 15px;
   padding: 12px 25px;
   background: rgba(232, 106, 23, 0.85);
-  backdrop-filter: blur(5px);
   border: none;
   color: white;
   border-radius: 10px;
@@ -127,17 +124,14 @@ body {
   transform: scale(1.05);
 }
 
-.banner-content button:active {
-  transform: scale(0.95);
-}
-
-/* ===== CARDS ===== */
+/* ===== SECTION ===== */
 .section {
- max-width: 1200px;
-  margin-top: 48px;   /* center */
+  max-width: 1200px;
+  margin: 48px auto;
   padding: 40px 20px;
 }
 
+/* ===== CARDS ===== */
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -157,6 +151,19 @@ body {
   transform: translateY(-5px);
 }
 
+.card img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  display: block;
+  border-radius: 10px;
+}
+
+/* hover zoom */
+.card:hover img {
+  transform: scale(1.05);
+}
+
 .card button {
   width: 100%;
   padding: 10px;
@@ -171,10 +178,7 @@ body {
   background-color: #F39C4A;
 }
 
-/* ============================= */
-/* ===== CART STYLES ADDED ===== */
-/* ============================= */
-
+/* ===== CART ===== */
 .cart-container {
   max-width: 900px;
   margin: 40px auto;
@@ -188,7 +192,6 @@ body {
 .cart-item {
   display: flex;
   justify-content: space-between;
-  align-items: center;
   border-bottom: 1px solid #eee;
   padding: 15px 0;
 }
@@ -198,24 +201,17 @@ body {
   color: #6B3518;
 }
 
-.cart-item p {
-  margin: 5px 0;
-  color: #8A4B2A;
-}
-
 .remove-btn {
   background: red;
   color: white;
   border: none;
   padding: 6px 10px;
   border-radius: 6px;
-  cursor: pointer;
 }
 
 .cart-total {
   text-align: right;
   margin-top: 20px;
-  font-size: 18px;
   font-weight: bold;
 }
 
@@ -228,11 +224,6 @@ body {
   color: white;
   border: none;
   border-radius: 8px;
-  cursor: pointer;
-}
-
-.checkout-btn:hover {
-  background: #F39C4A;
 }
 
 /* ===== FOOTER ===== */
@@ -256,21 +247,7 @@ body {
   padding: 10px 0;
 }
 
-.bottom-nav a {
-  text-align: center;
-  text-decoration: none;
-  color: #8A4B2A;
-}
-
-.bottom-nav a.active {
-  color: #6B3518;
-}
-
-/* ============================= */
-/* ===== RESPONSIVE ADDED ===== */
-/* ============================= */
-
-/* Tablet */
+/* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
   .header {
     flex-direction: column;
@@ -284,29 +261,14 @@ body {
   .banner {
     height: 250px;
   }
-
-  .banner-content h1 {
-    font-size: 20px;
-  }
 }
 
-/* Mobile */
 @media (max-width: 480px) {
-  .menu {
-    gap: 10px;
-    font-size: 14px;
-  }
-
   .cards {
     grid-template-columns: 1fr;
   }
 
-  .cart-item {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .bottom-nav {
-    font-size: 12px;
+  .card img {
+    height: 200px;
   }
 }
