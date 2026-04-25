@@ -22,36 +22,46 @@
     <h2 class="text-4xl md:text-5xl font-bold text-[#6B3518]">Self-Help Books</h2>
     <p class="mt-3 text-lg text-[#8A4B2A]">Books to improve your life and personal development.</p>
   </section>
+<!-- Books Grid -->
+<section class="px-10 pb-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
-  <!-- Books Grid -->
-  <section class="px-10 pb-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+  <div class="product-card bg-white rounded-2xl p-6 shadow-md border border-[#D8C3AF] hover:-translate-y-1.5 transition">
+    <img src="../assets/hoe win.jpeg" alt="How to Win Friends and Influence People" class="w-full h-55 object-cover rounded-xl">
+    <h3 class="text-2xl font-semibold text-[#6B3518] mt-4">How to Win Friends and Influence People</h3>
+    <p class="text-[#5A4638] mt-2">Classic advice on communication and relationships.</p>
+    <p class="product-rating">Price: ₹499 ⭐⭐⭐⭐☆ (4.4)</p>
 
-    <div class="product-card bg-white rounded-2xl p-6 shadow-md border border-[#D8C3AF] hover:-translate-y-1.5 transition">
-      <img src="../assets/hoe win.jpeg" alt="How to Win Friends and Influence People" class="w-full h-55 object-cover rounded-xl">
-      <h3 class="text-2xl font-semibold text-[#6B3518] mt-4">How to Win Friends and Influence People</h3>
-      <p class="text-[#5A4638] mt-2">Classic advice on communication and relationships.</p>
-      <p class="product-rating"> Price: ₹499  ⭐⭐⭐⭐☆ (4.4)</p>
-      <button onclick="addItem('Product 1', 499)" class="add-to-cart mt-5 px-5 py-2.5 bg-[#E86A17] text-white rounded-xl hover:bg-[#F39C4A] transition"> Buy Now </button>
-    </div>
+    <button onclick="addToCart('How to Win Friends and Influence People', 499)"
+      class="w-full mt-5 px-5 py-2.5 bg-[#E86A17] text-white rounded-xl hover:bg-[#F39C4A] transition text-center">
+      Buy Now
+    </button>
+  </div>
 
-    <div class="product-card bg-white rounded-2xl p-6 shadow-md border border-[#D8C3AF] hover:-translate-y-1.5 transition">
-      <img src="../assets/7 habits.jpeg" alt="The 7 Habits of Highly Effective People" class="w-full h-55 object-cover rounded-xl">
-      <h3 class="text-2xl font-semibold text-[#6B3518] mt-4">The 7 Habits of Highly Effective People</h3>
-      <p class="text-[#5A4638] mt-2">Build discipline, character, and leadership habits.</p>
-      <p class="product-rating"> Price: ₹500  ⭐⭐⭐⭐☆ (4.3)</p>
-      <button onclick="addItem('Product 2', 500)" class="add-to-cart mt-5 px-5 py-2.5 bg-[#E86A17] text-white rounded-xl hover:bg-[#F39C4A] transition"> Buy Now </button>
-    </div>
+  <div class="product-card bg-white rounded-2xl p-6 shadow-md border border-[#D8C3AF] hover:-translate-y-1.5 transition">
+    <img src="../assets/7 habits.jpeg" alt="The 7 Habits of Highly Effective People" class="w-full h-55 object-cover rounded-xl">
+    <h3 class="text-2xl font-semibold text-[#6B3518] mt-4">The 7 Habits of Highly Effective People</h3>
+    <p class="text-[#5A4638] mt-2">Build discipline, character, and leadership habits.</p>
+    <p class="product-rating">Price: ₹500 ⭐⭐⭐⭐☆ (4.3)</p>
 
-    <div class="product-card bg-white rounded-2xl p-6 shadow-md border border-[#D8C3AF] hover:-translate-y-1.5 transition">
-      <img src="../assets/atomic habbit.png" alt="Atomic Habits" class="w-full h-55 object-cover rounded-xl">
-      <h3 class="text-2xl font-semibold text-[#6B3518] mt-4">Atomic Habits</h3>
-      <p class="text-[#5A4638] mt-2">Practical way to build better daily habits.</p>
-      <p class="product-rating"> Price: ₹800  ⭐⭐⭐⭐☆ (4.5)</p>
-       <button onclick="addItem('Product 3', 800)" class="add-to-cart mt-5 px-5 py-2.5 bg-[#E86A17] text-white rounded-xl hover:bg-[#F39C4A] transition"> Buy Now </button>
-    </div>
+    <button onclick="addToCart('The 7 Habits of Highly Effective People', 500)"
+      class="w-full mt-5 px-5 py-2.5 bg-[#E86A17] text-white rounded-xl hover:bg-[#F39C4A] transition text-center">
+      Buy Now
+    </button>
+  </div>
 
-  </section>
+  <div class="product-card bg-white rounded-2xl p-6 shadow-md border border-[#D8C3AF] hover:-translate-y-1.5 transition">
+    <img src="../assets/atomic habbit.png" alt="Atomic Habits" class="w-full h-55 object-cover rounded-xl">
+    <h3 class="text-2xl font-semibold text-[#6B3518] mt-4">Atomic Habits</h3>
+    <p class="text-[#5A4638] mt-2">Practical way to build better daily habits.</p>
+    <p class="product-rating">Price: ₹800 ⭐⭐⭐⭐☆ (4.5)</p>
 
+    <button onclick="addToCart('Atomic Habits', 800)"
+      class="w-full mt-5 px-5 py-2.5 bg-[#E86A17] text-white rounded-xl hover:bg-[#F39C4A] transition text-center">
+      Buy Now
+    </button>
+  </div>
+
+</section>
     
   <script src="../js/categories.js"></script>
 </div>

@@ -24,38 +24,47 @@
   </section>
 
   <!-- Books Grid -->
-  <section class="px-10 pb-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+<section class="px-10 pb-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
-    <div class="product-card bg-white rounded-2xl p-6 shadow-md border border-[#D8C3AF] hover:-translate-y-1.5 transition">
-      <img src="../assets/alchamist.jpeg" alt="The Alchemist" class="w-full h-55 object-cover rounded-xl">
-      <h3 class="text-2xl font-semibold text-[#6B3518] mt-4">The Alchemist</h3>
-      <p class="text-[#5A4638] mt-2">A magical story about dreams and destiny.</p>
-      <p class="product-rating"> Price: ₹400  ⭐⭐⭐⭐☆ (4.5)</p>
-       <button onclick="addItem('Product 1', 400)" class="add-to-cart mt-5 px-5 py-2.5 bg-[#E86A17] text-white rounded-xl hover:bg-[#F39C4A] transition"> Buy Now </button>
-    </div>
+  <div class="product-card bg-white rounded-2xl p-6 shadow-md border border-[#D8C3AF] hover:-translate-y-1.5 transition">
+    <img src="../assets/alchamist.jpeg" alt="The Alchemist" class="w-full h-55 object-cover rounded-xl">
+    <h3 class="text-2xl font-semibold text-[#6B3518] mt-4">The Alchemist</h3>
+    <p class="text-[#5A4638] mt-2">A magical story about dreams and destiny.</p>
+    <p class="product-rating">Price: ₹400 ⭐⭐⭐⭐☆ (4.5)</p>
 
-    <div class="product-card bg-white rounded-2xl p-6 shadow-md border border-[#D8C3AF] hover:-translate-y-1.5 transition">
-      <img src="../assets/life of pi.jpeg" alt="Life of Pi" class="w-full h-55 object-cover rounded-xl">
-      <h3 class="text-2xl font-semibold text-[#6B3518] mt-4">Life of Pi</h3>
-      <p class="text-[#5A4638] mt-2">An unforgettable survival adventure at sea.</p>
-      <p class="product-rating"> Price: ₹300  ⭐⭐⭐⭐☆ (4.4)</p>
-    <button onclick="addItem('Product 2', 300)" class="add-to-cart mt-5 px-5 py-2.5 bg-[#E86A17] text-white rounded-xl hover:bg-[#F39C4A] transition"> Buy Now </button>
-    </div>
+    <button onclick="addToCart('The Alchemist', 400)"
+      class="w-full mt-5 px-5 py-2.5 bg-[#E86A17] text-white rounded-xl hover:bg-[#F39C4A] transition text-center">
+      Buy Now
+    </button>
+  </div>
 
-    <div class="product-card bg-white rounded-2xl p-6 shadow-md border border-[#D8C3AF] hover:-translate-y-1.5 transition">
-      <img src="../assets/the kite ruuner.jpeg" alt="The Kite Runner" class="w-full h-55 object-cover rounded-xl">
-      <h3 class="text-2xl font-semibold text-[#6B3518] mt-4">The Kite Runner</h3>
-      <p class="text-[#5A4638] mt-2">A touching story of friendship and redemption.</p>
-      <p class="product-rating"> Price: ₹450  ⭐⭐⭐⭐⭐ (4.5)</p>
-       <button onclick="addItem('Product 3', 450)" class="add-to-cart mt-5 px-5 py-2.5 bg-[#E86A17] text-white rounded-xl hover:bg-[#F39C4A] transition"> Buy Now </button>
-    </div>
+  <div class="product-card bg-white rounded-2xl p-6 shadow-md border border-[#D8C3AF] hover:-translate-y-1.5 transition">
+    <img src="../assets/life of pi.jpeg" alt="Life of Pi" class="w-full h-55 object-cover rounded-xl">
+    <h3 class="text-2xl font-semibold text-[#6B3518] mt-4">Life of Pi</h3>
+    <p class="text-[#5A4638] mt-2">An unforgettable survival adventure at sea.</p>
+    <p class="product-rating">Price: ₹300 ⭐⭐⭐⭐☆ (4.4)</p>
 
-  </section>
+    <button onclick="addToCart('Life of Pi', 300)"
+      class="w-full mt-5 px-5 py-2.5 bg-[#E86A17] text-white rounded-xl hover:bg-[#F39C4A] transition text-center">
+      Buy Now
+    </button>
+  </div>
 
- <div class="product-card bg-white rounded-2xl p-6 shadow-md border border-[#D8C3AF] hover:-translate-y-1.5 transition ">
-    <h2 class="text-2xl font-semibold text-[#6B3518] mt-4"><b>Cart</b></h2>
-    <ul id="cart" class="text-[#5A4638] mt-2"></ul>
-    <h3 id="total" class="text-2xl font-semibold text-[#6B3518] mt-4" >Total: ₹0</h3>
+  <div class="product-card bg-white rounded-2xl p-6 shadow-md border border-[#D8C3AF] hover:-translate-y-1.5 transition">
+    <img src="../assets/the kite ruuner.jpeg" alt="The Kite Runner" class="w-full h-55 object-cover rounded-xl">
+    <h3 class="text-2xl font-semibold text-[#6B3518] mt-4">The Kite Runner</h3>
+    <p class="text-[#5A4638] mt-2">A touching story of friendship and redemption.</p>
+    <p class="product-rating">Price: ₹450 ⭐⭐⭐⭐⭐ (4.5)</p>
+
+    <button onclick="addToCart('The Kite Runner', 450)"
+      class="w-full mt-5 px-5 py-2.5 bg-[#E86A17] text-white rounded-xl hover:bg-[#F39C4A] transition text-center">
+      Buy Now
+    </button>
+  </div>
+
+</section>
+
+ 
     
   <script src="../js/categories.js"></script>
 </div>
