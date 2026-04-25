@@ -2,34 +2,34 @@ document.addEventListener("DOMContentLoaded", function () {
     const form = document.getElementById("contactForm");
     const successMsg = document.getElementById("successMsg");
 
-    form.addEventListener("submit", function (e) {
-        e.preventDefault(); // stop page reload
+    if (!form) return;
 
-        // get values
+    form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
         const name = document.getElementById("name").value.trim();
         const email = document.getElementById("email").value.trim();
         const message = document.getElementById("message").value.trim();
 
-        // simple validation
-        if (name === "" || email === "" || message === "") {
+        // Validation
+        if (!name || !email || !message) {
             alert("⚠ Please fill all fields!");
             return;
         }
 
-        // email format check (basic)
         const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailPattern.test(email)) {
             alert("⚠ Please enter a valid email!");
             return;
         }
 
-        // show success message
+        // Show success message
         successMsg.classList.remove("hidden");
 
-        // reset form
+        // Reset form
         form.reset();
 
-        // hide message after 3 seconds
+        // Hide after 3 seconds
         setTimeout(() => {
             successMsg.classList.add("hidden");
         }, 3000);
