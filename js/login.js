@@ -1,27 +1,39 @@
-document.getElementById("loginForm").addEventListener("submit", function(e) {
-  e.preventDefault();
+document.addEventListener("DOMContentLoaded", () => {
+  const loginForm = document.getElementById("loginForm");
 
-  const email = document.getElementById("email").value.trim();
-  const password = document.getElementById("password").value.trim();
+  if (!loginForm) return;
 
-  // Validation
-  if (!email || !password) {
-    alert("Please fill all fields!");
-    return;
-  }
+  loginForm.addEventListener("submit", (e) => {
+    e.preventDefault();
 
-  // Get stored user
-  const user = JSON.parse(localStorage.getItem("user"));
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value.trim();
 
-  if (user && email === user.email && password === user.password) {
-    alert("Login Successful 🎉");
+    // Validation
+    if (!email || !password) {
+      alert("Please fill in all fields");
+      return;
+    }
 
-    // Save login state
-    localStorage.setItem("isLoggedIn", true);
+    // Get all registered users
+    const users = JSON.parse(localStorage.getItem("users")) || [];
 
-    // Redirect
+    // Find matching user
+    const user = users.find(
+      (u) => u.email === email && u.password === password
+    );
+
+    if (!user) {
+      alert("Invalid email or password. Please register first.");
+      return;
+    }
+
+    // Save session
+    localStorage.setItem("loggedInUser", JSON.stringify(user));
+
+    alert("Login successful!");
+
+    // Redirect to home page
     window.location.href = "../index.html";
-  } else {
-    alert("Invalid Email or Password ❌");
-  }
+  });
 });

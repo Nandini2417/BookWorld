@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Children's Books - Bookworld</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
 </head>
 
 <body class="bg-[#F5E6D3] text-[#3A2A1F] min-h-screen">
@@ -22,34 +23,46 @@
     <p class="mt-3 text-lg text-[#8A4B2A]">Fun and colorful books for young readers.</p>
   </section>
 
-  <!-- Books Grid -->
-  <section class="px-10 pb-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+ <!-- Books Grid -->
+<section class="px-10 pb-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
-    <div class="product-card bg-white rounded-2xl p-6 shadow-md border border-[#D8C3AF] hover:-translate-y-1.5 transition">
-      <img src="../assets/harry potter.jpg" alt="Harry Potter" class="w-full h-55 object-cover rounded-xl">
-      <h3 class="text-2xl font-semibold text-[#6B3518] mt-4">Harry Potter</h3>
-      <p class="text-[#5A4638] mt-2">A magical adventure series.</p>
-      <p class="product-rating"> Price: ₹200  ⭐⭐⭐⭐☆ (4.4)</p>
-     <button onclick="addItem('Product 1', 100)" class="add-to-cart mt-5 px-5 py-2.5 bg-[#E86A17] text-white rounded-xl hover:bg-[#F39C4A] transition"> Buy Now </button>
-    </div>
+  <div class="product-card bg-white rounded-2xl p-6 shadow-md border border-[#D8C3AF] hover:-translate-y-1.5 transition">
+    <img src="../assets/harry potter.jpg" alt="Harry Potter" class="w-full h-55 object-cover rounded-xl">
+    <h3 class="text-2xl font-semibold text-[#6B3518] mt-4">Harry Potter</h3>
+    <p class="text-[#5A4638] mt-2">A magical adventure series.</p>
+    <p class="product-rating">Price: ₹200 ⭐⭐⭐⭐☆ (4.4)</p>
 
-    <div class="product-card bg-white rounded-2xl p-6 shadow-md border border-[#D8C3AF] hover:-translate-y-1.5 transition">
-      <img src="../assets/wimpy kids.jpeg" alt="Diary of a Wimpy Kid" class="w-full h-55 object-cover rounded-xl">
-      <h3 class="text-2xl font-semibold text-[#6B3518] mt-4">Diary of a Wimpy Kid</h3>
-      <p class="text-[#5A4638] mt-2">Fun school-life stories.</p>
-      <p class="product-rating"> Price: ₹300  ⭐⭐⭐⭐⭐ (4.5)</p>
- <button onclick="addItem('Product 2', 300)" class="add-to-cart mt-5 px-5 py-2.5 bg-[#E86A17] text-white rounded-xl hover:bg-[#F39C4A] transition"> Buy Now </button>
-    </div>
+    <button onclick="addToCart('Harry Potter', 200)"
+      class="w-full mt-5 px-5 py-2.5 bg-[#E86A17] text-white rounded-xl hover:bg-[#F39C4A] transition text-center">
+      Buy Now
+    </button>
+  </div>
 
-    <div class="product-card bg-white rounded-2xl p-6 shadow-md border border-[#D8C3AF] hover:-translate-y-1.5 transition">
-      <img src="../assets/naruto.jpeg" alt="Naruto" class="w-full h-55 object-cover rounded-xl">
-      <h3 class="text-2xl font-semibold text-[#6B3518] mt-4">Naruto</h3>
-      <p class="text-[#5A4638] mt-2">An exciting ninja journey.</p>
-      <p class="product-rating"> Price: ₹550  ⭐⭐⭐⭐☆ (4.3)</p>
-       <button onclick="addItem('Product 3', 550)" class="add-to-cart mt-5 px-5 py-2.5 bg-[#E86A17] text-white rounded-xl hover:bg-[#F39C4A] transition"> Buy Now </button>
-    </div>
+  <div class="product-card bg-white rounded-2xl p-6 shadow-md border border-[#D8C3AF] hover:-translate-y-1.5 transition">
+    <img src="../assets/wimpy kids.jpeg" alt="Diary of a Wimpy Kid" class="w-full h-55 object-cover rounded-xl">
+    <h3 class="text-2xl font-semibold text-[#6B3518] mt-4">Diary of a Wimpy Kid</h3>
+    <p class="text-[#5A4638] mt-2">Fun school-life stories.</p>
+    <p class="product-rating">Price: ₹300 ⭐⭐⭐⭐⭐ (4.5)</p>
 
-  </section>
+    <button onclick="addToCart('Diary of a Wimpy Kid', 300)"
+      class="w-full mt-5 px-5 py-2.5 bg-[#E86A17] text-white rounded-xl hover:bg-[#F39C4A] transition text-center">
+      Buy Now
+    </button>
+  </div>
+
+  <div class="product-card bg-white rounded-2xl p-6 shadow-md border border-[#D8C3AF] hover:-translate-y-1.5 transition">
+    <img src="../assets/naruto.jpeg" alt="Naruto" class="w-full h-55 object-cover rounded-xl">
+    <h3 class="text-2xl font-semibold text-[#6B3518] mt-4">Naruto</h3>
+    <p class="text-[#5A4638] mt-2">An exciting ninja journey.</p>
+    <p class="product-rating">Price: ₹550 ⭐⭐⭐⭐☆ (4.3)</p>
+
+    <button onclick="addToCart('Naruto', 550)"
+      class="w-full mt-5 px-5 py-2.5 bg-[#E86A17] text-white rounded-xl hover:bg-[#F39C4A] transition text-center">
+      Buy Now
+    </button>
+  </div>
+
+</section>
 
  
   <script src="../js/categories.js"></script>

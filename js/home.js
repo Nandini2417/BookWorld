@@ -1,4 +1,7 @@
-// ===== Banner Data (Fixed + Improved) =====
+// ==============================
+// 📢 BANNER SLIDER
+// ==============================
+
 const banners = [
   {
     img: "./assets/banner1.jpg",
@@ -23,60 +26,61 @@ const banners = [
 ];
 
 let index = 0;
+let autoSlide;
 
-// ===== Show Banner =====
+// FIX: wait for DOM properly
+document.addEventListener("DOMContentLoaded", () => {
+  showBanner();
+
+  autoSlide = setInterval(nextImage, 3000);
+
+  const bannerSection = document.querySelector("section");
+
+  if (bannerSection) {
+    bannerSection.addEventListener("mouseenter", () => {
+      clearInterval(autoSlide);
+    });
+
+    bannerSection.addEventListener("mouseleave", () => {
+      autoSlide = setInterval(nextImage, 3000);
+    });
+  }
+});
+
 function showBanner() {
-  document.getElementById("bannerImage").src = banners[index].img;
-  document.getElementById("bannerTitle").innerText = banners[index].title;
-  document.getElementById("bannerText").innerText = banners[index].text;
+  const img = document.getElementById("bannerImage");
+  const title = document.getElementById("bannerTitle");
+  const text = document.getElementById("bannerText");
+
+  if (!img || !title || !text) return;
+
+  img.src = banners[index].img;
+  title.innerText = banners[index].title;
+  text.innerText = banners[index].text;
 }
 
-// ===== Next =====
 function nextImage() {
   index = (index + 1) % banners.length;
   showBanner();
 }
 
-// ===== Prev =====
 function prevImage() {
   index = (index - 1 + banners.length) % banners.length;
   showBanner();
 }
 
-// ===== Auto Slide =====
-let autoSlide = setInterval(nextImage, 3000);
-
-// ===== Pause on Hover =====
-const bannerSection = document.querySelector("section");
-
-if (bannerSection) {
-  bannerSection.addEventListener("mouseenter", () => {
-    clearInterval(autoSlide);
-  });
-
-  bannerSection.addEventListener("mouseleave", () => {
-    autoSlide = setInterval(nextImage, 3000);
-  });
-}
-
-// ===== First Load =====
-window.onload = showBanner;
-
 
 // ==============================
-// 🛒 ADD TO CART FUNCTION
+// 🛒 CART FUNCTION (FIXED)
 // ==============================
 
-function addItem(name, price) {
-
-  // get existing cart
+function addToCart(name, price) {
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-  // check if product already exists
   let existingItem = cart.find(item => item.name === name);
 
   if (existingItem) {
-    existingItem.qty += 1; // increase quantity
+    existingItem.qty += 1;
   } else {
     cart.push({
       name: name,
@@ -85,9 +89,7 @@ function addItem(name, price) {
     });
   }
 
-  // save back to localStorage
   localStorage.setItem("cart", JSON.stringify(cart));
 
-  // alert
-  alert(name + " added to cart 🛒");
+  alert(`${name} added to cart 🛒`);
 }

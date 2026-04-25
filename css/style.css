@@ -26,55 +26,13 @@ body {
   flex-wrap: wrap;
 }
 
-.logo h2 {
-  color: #6B3518;
-}
-
-.search input {
-  padding: 10px;
-  width: 250px;
-  border: 1px solid #D8C3AF;
-  border-radius: 8px;
-  outline: none;
-}
-
-.icons a {
-  margin-left: 15px;
-  color: #6B3518;
-  font-size: 20px;
-}
-
-.icons a:hover {
-  color: #E86A17;
-}
-
 /* ===== MENU ===== */
 .menu {
   background: rgba(238, 221, 200, 0.8);
-  backdrop-filter: blur(8px);
-  border-bottom: 1px solid #D8C3AF;
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
   gap: 25px;
   padding: 12px;
-}
-
-.menu a {
-  text-decoration: none;
-  color: #8A4B2A;
-  font-weight: 500;
-  padding: 6px 10px;
-}
-
-.menu a.active {
-  color: #6B3518;
-  font-weight: bold;
-  border-bottom: 2px solid #E86A17;
-}
-
-.menu a:hover {
-  color: #E86A17;
 }
 
 /* ===== BANNER ===== */
@@ -90,88 +48,59 @@ body {
   object-fit: cover;
 }
 
-.banner::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.4);
-}
-
-.banner-content {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  text-align: center;
-  z-index: 2;
-}
-
-.banner-content button {
-  margin-top: 15px;
-  padding: 12px 25px;
-  background: rgba(232, 106, 23, 0.85);
-  border: none;
-  color: white;
-  border-radius: 10px;
-  cursor: pointer;
-}
-
-.banner-content button:hover {
-  background: rgba(243, 156, 74, 0.95);
-  transform: scale(1.05);
-}
-
 /* ===== SECTION ===== */
 .section {
   max-width: 1200px;
-  margin: 48px auto;
-  padding: 40px 20px;
+  margin: 40px auto;
+  padding: 20px;
 }
 
-/* ===== CARDS ===== */
+/* =========================
+   🔥 FIXED GRID (IMPORTANT)
+========================= */
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 20px;
+  align-items: stretch;
 }
 
+/* =========================
+   🔥 FIXED CARD (IMPORTANT)
+========================= */
 .card {
-  background: rgba(255, 255, 255, 0.9);
+  background: #fff;
   border: 1px solid #D8C3AF;
   border-radius: 10px;
   padding: 15px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  transition: 0.3s;
+
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
-.card:hover {
-  transform: translateY(-5px);
-}
-
+/* =========================
+   🔥 FIXED IMAGE
+========================= */
 .card img {
   width: 100%;
-  aspect-ratio: 3 / 4;
+  height: 220px;
   object-fit: cover;
-  display: block;
   border-radius: 10px;
 }
 
-/* hover zoom */
-.card:hover img {
-  transform: scale(1.05);
-}
-
+/* =========================
+   🔥 BUTTON FIX (MAIN FIX)
+========================= */
 .card button {
   width: 100%;
   padding: 10px;
-  margin-top: 10px;
+  margin-top: auto;   /* pushes button to bottom */
   background-color: #E86A17;
   color: white;
   border: none;
   border-radius: 8px;
+  cursor: pointer;
 }
 
 .card button:hover {
@@ -186,44 +115,6 @@ body {
   background: white;
   border-radius: 12px;
   border: 1px solid #D8C3AF;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-
-.cart-item {
-  display: flex;
-  justify-content: space-between;
-  border-bottom: 1px solid #eee;
-  padding: 15px 0;
-}
-
-.cart-item h4 {
-  margin: 0;
-  color: #6B3518;
-}
-
-.remove-btn {
-  background: red;
-  color: white;
-  border: none;
-  padding: 6px 10px;
-  border-radius: 6px;
-}
-
-.cart-total {
-  text-align: right;
-  margin-top: 20px;
-  font-weight: bold;
-}
-
-.checkout-btn {
-  display: block;
-  margin-left: auto;
-  margin-top: 15px;
-  padding: 10px 20px;
-  background: #E86A17;
-  color: white;
-  border: none;
-  border-radius: 8px;
 }
 
 /* ===== FOOTER ===== */
@@ -239,8 +130,7 @@ body {
   position: fixed;
   bottom: 0;
   width: 100%;
-  background: rgba(255,255,255,0.9);
-  backdrop-filter: blur(10px);
+  background: white;
   border-top: 1px solid #D8C3AF;
   display: flex;
   justify-content: space-around;
@@ -249,26 +139,11 @@ body {
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
-  .header {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .search input {
-    width: 100%;
-  }
-
-  .banner {
-    height: 250px;
-  }
-}
-
-@media (max-width: 480px) {
   .cards {
     grid-template-columns: 1fr;
   }
 
-  .card img {
-    height: 200px;
+  .banner {
+    height: 250px;
   }
 }
