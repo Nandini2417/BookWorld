@@ -1,23 +1,37 @@
-document.getElementById("contactForm").addEventListener("submit", function(e) {
-  e.preventDefault();
+document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("contactForm");
+    const successMsg = document.getElementById("successMsg");
 
-  let name = document.getElementById("name").value;
-  let email = document.getElementById("email").value;
-  let message = document.getElementById("message").value;
+    form.addEventListener("submit", function (e) {
+        e.preventDefault(); // stop page reload
 
-  if (name === "" || email === "" || message === "") {
-    alert("Please fill all fields!");
-    return;
-  }
+        // get values
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const message = document.getElementById("message").value.trim();
 
-  // Show success message
-  document.getElementById("successMsg").classList.remove("hidden");
+        // simple validation
+        if (name === "" || email === "" || message === "") {
+            alert("⚠ Please fill all fields!");
+            return;
+        }
 
-  // Clear form
-  document.getElementById("contactForm").reset();
+        // email format check (basic)
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(email)) {
+            alert("⚠ Please enter a valid email!");
+            return;
+        }
 
-  // Hide message after 3 sec
-  setTimeout(() => {
-    document.getElementById("successMsg").classList.add("hidden");
-  }, 3000);
+        // show success message
+        successMsg.classList.remove("hidden");
+
+        // reset form
+        form.reset();
+
+        // hide message after 3 seconds
+        setTimeout(() => {
+            successMsg.classList.add("hidden");
+        }, 3000);
+    });
 });
